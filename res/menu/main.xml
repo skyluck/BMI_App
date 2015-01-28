@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.demo.android.bmi.MainActivity" >
+
+    <item
+        android:id="@+id/action_about"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/action_about"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_close"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="@string/action_close"
+        app:showAsAction="ifRoom|withText"/>
+
+</menu>
