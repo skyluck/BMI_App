@@ -1758,7 +1758,8 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int support_simple_spinner_dropdown_item=0x7f030018;
+        public static final int activity_report=0x7f030018;
+        public static final int support_simple_spinner_dropdown_item=0x7f030019;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -1822,32 +1823,33 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
         /**  action bar 
          */
-        public static final int action_about=0x7f0a001c;
-        public static final int action_close=0x7f0a001d;
-        public static final int action_msg=0x7f0a001f;
-        public static final int action_settings=0x7f0a0012;
-        public static final int action_title=0x7f0a001e;
-        public static final int advice_average=0x7f0a0018;
-        public static final int advice_heavy=0x7f0a0019;
+        public static final int action_about=0x7f0a001d;
+        public static final int action_close=0x7f0a001e;
+        public static final int action_msg=0x7f0a0020;
+        public static final int action_settings=0x7f0a0013;
+        public static final int action_title=0x7f0a001f;
+        public static final int advice_average=0x7f0a0019;
+        public static final int advice_heavy=0x7f0a001a;
         /**  advice 
          */
-        public static final int advice_light=0x7f0a0017;
-        public static final int app_name=0x7f0a0010;
-        public static final int bmi_btn=0x7f0a0015;
+        public static final int advice_light=0x7f0a0018;
+        public static final int app_name=0x7f0a0011;
+        public static final int bmi_btn=0x7f0a0016;
         /**  BMI 
          */
-        public static final int bmi_height=0x7f0a0013;
-        public static final int bmi_result=0x7f0a0016;
-        public static final int bmi_weight=0x7f0a0014;
-        public static final int hello_world=0x7f0a0011;
+        public static final int bmi_height=0x7f0a0014;
+        public static final int bmi_result=0x7f0a0017;
+        public static final int bmi_weight=0x7f0a0015;
+        public static final int hello_world=0x7f0a0012;
         /**  OptionDialog 
          */
-        public static final int homepage_label=0x7f0a0020;
-        public static final int homepage_uir=0x7f0a0021;
-        public static final int input_error=0x7f0a001b;
+        public static final int homepage_label=0x7f0a0021;
+        public static final int homepage_uir=0x7f0a0022;
+        public static final int input_error=0x7f0a001c;
         /**  other 
          */
-        public static final int menu_settings=0x7f0a001a;
+        public static final int menu_settings=0x7f0a001b;
+        public static final int report_title=0x7f0a0010;
     }
     public static final class style {
         /** 
