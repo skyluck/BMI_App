@@ -33,6 +33,7 @@ public class MainActivity extends ActionBarActivity {
     private EditText num_weight;
     private TextView show_result;
     private TextView show_suggest;
+    private static final int ACTIVITY_REPORT = 1000;
     
     private void initViews() {
     	button_calc = (Button) findViewById(R.id.submit);
@@ -75,10 +76,28 @@ public class MainActivity extends ActionBarActivity {
     		//Switch to report page
     		Intent intent = new Intent();
     		intent.setClass(MainActivity.this, ReportActivity.class);
-    		startActivity(intent);
-    		
-    	}
+    		Bundle bundle = new Bundle();
+    		bundle.putString("KEY_HEIGHT", num_height.getText().toString());
+    		bundle.putString("KEY_WEIGHT", num_weight.getText().toString());
+    		intent.putExtras(bundle);
+    		//startActivity(intent);
+    		startActivityForResult(intent, ACTIVITY_REPORT);
+     	}
     };
+    
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent intent) {
+    	super.onActivityResult(requestCode, resultCode, intent);
+    	if (resultCode == RESULT_OK) {
+    		if (requestCode == ACTIVITY_REPORT) {
+    			Bundle bundle = intent.getExtras();
+    			String bmi = bundle.getString("BMI");
+    			show_suggest.setText(getString(R.string.advice_history) + bmi);
+    			num_weight.setText(R.string.input_empty);
+    			num_weight.requestFocus();
+    		}
+    	}
+    }
 
 
     @Override

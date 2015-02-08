@@ -1635,7 +1635,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020033;
     }
     public static final class id {
-        public static final int action_about=0x7f050046;
+        public static final int action_about=0x7f050047;
         public static final int action_bar=0x7f050031;
         public static final int action_bar_activity_content=0x7f050018;
         public static final int action_bar_container=0x7f050030;
@@ -1643,7 +1643,7 @@ containing a value of this type.
         public static final int action_bar_spinner=0x7f050017;
         public static final int action_bar_subtitle=0x7f05001f;
         public static final int action_bar_title=0x7f05001e;
-        public static final int action_close=0x7f050047;
+        public static final int action_close=0x7f050048;
         public static final int action_context_bar=0x7f050032;
         public static final int action_menu_divider=0x7f05001a;
         public static final int action_menu_presenter=0x7f05001b;
@@ -1680,6 +1680,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f05001c;
         public static final int progress_horizontal=0x7f05001d;
         public static final int radio=0x7f05002b;
+        public static final int report_back=0x7f050046;
         public static final int result=0x7f050044;
         public static final int search_badge=0x7f050035;
         public static final int search_bar=0x7f050034;
@@ -1823,32 +1824,35 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
         /**  action bar 
          */
-        public static final int action_about=0x7f0a001d;
-        public static final int action_close=0x7f0a001e;
-        public static final int action_msg=0x7f0a0020;
-        public static final int action_settings=0x7f0a0013;
-        public static final int action_title=0x7f0a001f;
-        public static final int advice_average=0x7f0a0019;
-        public static final int advice_heavy=0x7f0a001a;
+        public static final int action_about=0x7f0a0020;
+        public static final int action_close=0x7f0a0021;
+        public static final int action_msg=0x7f0a0023;
+        public static final int action_settings=0x7f0a0014;
+        public static final int action_title=0x7f0a0022;
+        public static final int advice_average=0x7f0a001a;
+        public static final int advice_heavy=0x7f0a001b;
+        public static final int advice_history=0x7f0a001e;
         /**  advice 
          */
-        public static final int advice_light=0x7f0a0018;
-        public static final int app_name=0x7f0a0011;
-        public static final int bmi_btn=0x7f0a0016;
+        public static final int advice_light=0x7f0a0019;
+        public static final int app_name=0x7f0a0012;
+        public static final int bmi_btn=0x7f0a0017;
         /**  BMI 
          */
-        public static final int bmi_height=0x7f0a0014;
-        public static final int bmi_result=0x7f0a0017;
-        public static final int bmi_weight=0x7f0a0015;
-        public static final int hello_world=0x7f0a0012;
+        public static final int bmi_height=0x7f0a0015;
+        public static final int bmi_result=0x7f0a0018;
+        public static final int bmi_weight=0x7f0a0016;
+        public static final int hello_world=0x7f0a0013;
         /**  OptionDialog 
          */
-        public static final int homepage_label=0x7f0a0021;
-        public static final int homepage_uir=0x7f0a0022;
-        public static final int input_error=0x7f0a001c;
+        public static final int homepage_label=0x7f0a0024;
+        public static final int homepage_uir=0x7f0a0025;
+        public static final int input_empty=0x7f0a001f;
+        public static final int input_error=0x7f0a001d;
         /**  other 
          */
-        public static final int menu_settings=0x7f0a001b;
+        public static final int menu_settings=0x7f0a001c;
+        public static final int report_back=0x7f0a0011;
         public static final int report_title=0x7f0a0010;
     }
     public static final class style {
