@@ -6,8 +6,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,14 +22,58 @@ import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
+	private static final String TAG = MainActivity.class.getSimpleName();
+	//public static final String PREF = "BMI_PREF";
+	//public static final String PREF_HEIGHT = "BMI_HEIGHT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        Log.v(TAG, "onCreate");
         initViews();
+        //restorePres();
         setListensers();
     }
+    
+    
+    //------------------------------------------Process Test
+    public void onRestart () {
+    	super.onRestart();
+    	Log.v(TAG, "onReStart");
+    }
+    
+    public void onStart () {
+    	super.onStart();
+    	Log.v(TAG, "onStart");
+    }
+    
+    public void onResume() {
+    	super.onResume();
+    	Log.v(TAG, "onResume");
+    	restorePres();
+    }
+    
+    public void onPause () {
+    	super.onPause();
+    	Log.v(TAG, "onPause");
+    	// Save user preferences. use Editor object to make changes.
+    	//SharedPreferences settings = getSharedPreferences(PREF, 0);
+    	//Editor editor = settings.edit();
+    	//editor.putString(PREF_HEIGHT, num_height.getText().toString());
+    	//editor.commit();
+    	Pref.setHeight(this, num_height.getText().toString());
+    }
+    
+    public void onStop () {
+    	super.onStop();
+    	Log.v(TAG, "onStop");
+    }
+    
+    public void onDestroy () {
+    	super.onDestroy();
+    	Log.v(TAG, "onDestroy");
+    }
+    //--------------------------------------------
     
     private Button button_calc;
     private EditText num_height;
@@ -41,6 +88,17 @@ public class MainActivity extends ActionBarActivity {
     	num_weight = (EditText) findViewById(R.id.weight);
     	show_result = (TextView) findViewById(R.id.result);
     	show_suggest = (TextView) findViewById(R.id.suggest);
+    }
+    
+ // Restore preferences
+    private void restorePres () {
+    	//SharedPreferences settings = getSharedPreferences (PREF, 0);
+    	//String pref_height = settings.getString(PREF_HEIGHT, "");
+    	String pref_height = Pref.getHeight(this);
+    	if (! "".equals(pref_height)) {
+    		num_height.setText(pref_height);
+    		num_weight.requestFocus();
+    	}
     }
     
     //Listen for button clicks
@@ -115,7 +173,10 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
         switch (id) {
         case R.id.action_about:
-        	openOptionsDialog();
+        	//openOptionsDialog();
+        	Intent intent = new Intent(Intent.ACTION_VIEW);
+        	intent.setClass(MainActivity.this, Pref.class);
+        	startActivity(intent);
         	break;
         case R.id.action_close:
         	finish();

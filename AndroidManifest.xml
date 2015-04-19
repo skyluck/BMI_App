@@ -27,6 +27,7 @@
             android:label="@string/report_title">
             
         </activity>
+        <activity android:name="Pref"></activity>
     </application>
 
 </manifest>

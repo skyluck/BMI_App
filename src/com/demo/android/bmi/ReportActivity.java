@@ -43,7 +43,7 @@ public class ReportActivity extends Activity {
 		double height = Double.parseDouble(bundle.getString("KEY_HEIGHT"))/100;
 		double weight = Double.parseDouble(bundle.getString("KEY_WEIGHT"));
 		BMI = weight / (height*height);
-		show_result.setText(getString(R.string.bmi_height) + nf.format(BMI));
+		show_result.setText(getString(R.string.report_title) + nf.format(BMI));
 		
 		//Give health advice
 		if (BMI > 25) {
