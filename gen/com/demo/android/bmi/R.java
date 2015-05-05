@@ -1542,6 +1542,7 @@ containing a value of this type.
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
+ Default screen margins, per the Android Design guidelines. 
          */
         public static final int activity_horizontal_margin=0x7f09002b;
         public static final int activity_vertical_margin=0x7f09002c;
@@ -1823,6 +1824,7 @@ containing a value of this type.
          */
         public static final int abc_toolbar_collapse_description=0x7f0b0004;
         /**  action bar 
+ action bar 
          */
         public static final int action_about=0x7f0b0020;
         public static final int action_close=0x7f0b0021;
@@ -1833,23 +1835,27 @@ containing a value of this type.
         public static final int advice_heavy=0x7f0b001b;
         public static final int advice_history=0x7f0b001e;
         /**  advice 
+ advice 
          */
         public static final int advice_light=0x7f0b0019;
         public static final int app_name=0x7f0b0012;
         public static final int bmi_btn=0x7f0b0017;
         /**  BMI 
+ BMI 
          */
         public static final int bmi_height=0x7f0b0015;
         public static final int bmi_result=0x7f0b0018;
         public static final int bmi_weight=0x7f0b0016;
         public static final int hello_world=0x7f0b0013;
         /**  OptionDialog 
+ OptionDialog 
          */
         public static final int homepage_label=0x7f0b0024;
         public static final int homepage_uir=0x7f0b0025;
         public static final int input_empty=0x7f0b001f;
         public static final int input_error=0x7f0b001d;
         /**  other 
+ other 
          */
         public static final int menu_settings=0x7f0b001c;
         public static final int report_back=0x7f0b0011;
@@ -1876,9 +1882,20 @@ containing a value of this type.
         res/values-v11/styles.xml on API 14+ devices.
     
  API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
          */
         public static final int AppBaseTheme=0x7f0c00eb;
         /**  Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0c00ec;
