@@ -7,6 +7,13 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="21" />
+    
+    <supports-screens 
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true"/>
 
     <application
         android:allowBackup="true"
@@ -28,6 +35,7 @@
             
         </activity>
         <activity android:name="Pref"></activity>
+        <activity android:name="com.demo.android.bmi.HistoryActivity"></activity>
     </application>
 
 </manifest>

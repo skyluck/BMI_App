@@ -179,7 +179,10 @@ public class MainActivity extends ActionBarActivity {
         	startActivity(intent);
         	break;
         case R.id.action_close:
-        	finish();
+        	//finish();
+        	Intent intent_history = new Intent(Intent.ACTION_VIEW);
+        	intent_history.setClass(MainActivity.this, HistoryActivity.class);
+        	startActivity(intent_history);
         	break;
         }
         return super.onOptionsItemSelected(item);
