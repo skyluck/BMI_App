@@ -7,6 +7,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ReportActivity extends Activity {
+	//SQLite
+	private DB mDbHelper;
+	private Cursor mCursor;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,6 +49,12 @@ public class ReportActivity extends Activity {
 		double weight = Double.parseDouble(bundle.getString("KEY_WEIGHT"));
 		BMI = weight / (height*height);
 		show_result.setText(getString(R.string.report_title) + nf.format(BMI));
+		
+		//record calcBMI result to db
+		mDbHelper = new DB(ReportActivity.this);
+		mDbHelper.open();
+		mDbHelper.create(nf.format(BMI));
+		mDbHelper.close();
 		
 		//Give health advice
 		if (BMI > 25) {

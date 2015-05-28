@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ public class MainActivity extends ActionBarActivity {
 	private static final String TAG = MainActivity.class.getSimpleName();
 	//public static final String PREF = "BMI_PREF";
 	//public static final String PREF_HEIGHT = "BMI_HEIGHT";
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,6 +141,7 @@ public class MainActivity extends ActionBarActivity {
     		bundle.putString("KEY_WEIGHT", num_weight.getText().toString());
     		intent.putExtras(bundle);
     		//startActivity(intent);
+    		
     		startActivityForResult(intent, ACTIVITY_REPORT);
      	}
     };

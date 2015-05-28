@@ -1,5 +1,11 @@
 package com.demo.android.bmi;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import android.app.DownloadManager.Query;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -43,8 +49,52 @@ public class DB {
 		dbHelper.close();
 	}
 	
+	String[] strClos = new String[] {
+		KEY_ROWID,
+		KEY_ITEM,
+		KEY_CREATED
+	};
+	
 	public Cursor getAll() {
-		return db.rawQuery("SELECT * FROM  " + DATABASE_TABLE + " ORDER BY " + KEY_CREATED + " DESC", null);
+		//return db.rawQuery("SELECT * FROM  " + DATABASE_TABLE + " ORDER BY " + KEY_CREATED + " DESC", null);
+		return db.query(DATABASE_TABLE,strClos,null,null,null,null,KEY_CREATED + " DESC");
+	}
+	
+	//add an entry
+	public long create (String record) {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm", Locale.ENGLISH);
+		
+		Date now = new Date();
+		ContentValues args = new ContentValues();
+		args.put(KEY_ITEM, record);
+		args.put(KEY_CREATED, df.format(now.getTime()));
+		
+		return db.insert(DATABASE_TABLE, null, args);
+	}
+	
+	//remove an entry
+	public boolean delete (long rowId) {
+		return db.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
+	}
+	
+	//query single entry
+	public Cursor get(long rowId) throws SQLException {
+		Cursor mCursor = db.query(true, DATABASE_TABLE, strClos, KEY_ROWID + "=" + rowId, null, null, null, null, null);
+		
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		
+		return mCursor;
+	}
+	
+	//update
+	public boolean update(long rowId, String record) {
+		Date now = new Date();
+		ContentValues args = new ContentValues();
+		args.put(KEY_ITEM, record);
+		
+		return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
 	}
 	
 	private static class DatabaseHelper extends SQLiteOpenHelper {

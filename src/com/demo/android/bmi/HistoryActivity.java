@@ -3,8 +3,12 @@ package com.demo.android.bmi;
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.view.View;
 
 public class HistoryActivity extends ListActivity {
 	private DB mDbHelper;
@@ -29,6 +33,14 @@ public class HistoryActivity extends ListActivity {
 		setContentView(R.layout.activity_history);
 		getListView().setEmptyView(findViewById(R.id.empty));
 		setAdapter();
+		
+		getListView().setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position,long id){
+				mDbHelper.delete(position);
+				setAdapter();
+			}
+		});
 	}
 	
 	private void setAdapter () {
@@ -46,4 +58,5 @@ public class HistoryActivity extends ListActivity {
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_2, mCursor, from_column, to_layout);
 		setListAdapter(adapter);
 	}
+	
 }
