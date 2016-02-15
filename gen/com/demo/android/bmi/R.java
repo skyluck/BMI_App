@@ -1636,7 +1636,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020033;
     }
     public static final class id {
-        public static final int action_about=0x7f060048;
+        public static final int action_about=0x7f06004c;
         public static final int action_bar=0x7f060031;
         public static final int action_bar_activity_content=0x7f060018;
         public static final int action_bar_container=0x7f060030;
@@ -1644,8 +1644,9 @@ containing a value of this type.
         public static final int action_bar_spinner=0x7f060017;
         public static final int action_bar_subtitle=0x7f06001f;
         public static final int action_bar_title=0x7f06001e;
-        public static final int action_close=0x7f060049;
+        public static final int action_close=0x7f06004d;
         public static final int action_context_bar=0x7f060032;
+        public static final int action_delete=0x7f06004b;
         public static final int action_menu_divider=0x7f06001a;
         public static final int action_menu_presenter=0x7f06001b;
         public static final int action_mode_bar=0x7f06002e;
@@ -1673,6 +1674,7 @@ containing a value of this type.
         public static final int icon=0x7f060026;
         public static final int ifRoom=0x7f06000c;
         public static final int image=0x7f060023;
+        public static final int imgbtn1=0x7f06004a;
         public static final int listMode=0x7f060002;
         public static final int list_item=0x7f060025;
         public static final int middle=0x7f060013;
@@ -1703,6 +1705,8 @@ containing a value of this type.
         public static final int submit_area=0x7f06003c;
         public static final int suggest=0x7f060046;
         public static final int tabMode=0x7f060003;
+        public static final int text1=0x7f060048;
+        public static final int text2=0x7f060049;
         public static final int title=0x7f060027;
         public static final int up=0x7f060016;
         public static final int useLogo=0x7f060005;
@@ -1763,10 +1767,13 @@ containing a value of this type.
         public static final int activity_history=0x7f030017;
         public static final int activity_main=0x7f030018;
         public static final int activity_report=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int list_row=0x7f03001a;
+        public static final int new_widget=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
     }
     public static final class menu {
-        public static final int main=0x7f0d0000;
+        public static final int context_history=0x7f0d0000;
+        public static final int main=0x7f0d0001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -2218,7 +2225,8 @@ containing a value of this type.
         public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0c0035;
     }
     public static final class xml {
-        public static final int pref=0x7f050000;
+        public static final int new_widget_info=0x7f050000;
+        public static final int pref=0x7f050001;
     }
     public static final class styleable {
         /**  ============================================ 
